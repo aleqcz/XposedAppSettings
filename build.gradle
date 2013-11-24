@@ -13,7 +13,10 @@ dependencies {
 }
 
 android {
-    compileSdkVersion 15
+    // The Xposed framework should not be packaged with the apk, so we cannot add it as a dependency
+    // Instead, it should be added as an sdk add-on, see http://forum.xda-developers.com/showthread.php?p=41904291#post41904291
+    // OLD: compileSdkVersion 15
+    compileSdkVersion 'rovo89:Xposed Bridge API 36:15'
     buildToolsVersion "19.0.0"
 
     sourceSets {
