@@ -15,6 +15,7 @@ Resident in memory; Orientation; Insistent notifications; No big notifications; 
     <string name="app_searchhint">name or package</string>
     <string name="app_about">An <a href="http://forum.xda-developers.com/showthread.php?t=1574401">Xposed</a> module by
  <a href="http://forum.xda-developers.com/member.php?u=4419114">rovo89</a> and <a href="http://forum.xda-developers.com/member.php?u=4322181">Tungstwenty</a>.
+        Minor enhancement by <a href="http://forum.xda-developers.com/member.php?u=922291">Aleq</a>.
  \nYou can use <a href="http://forum.xda-developers.com/showthread.php?t=2437377">this thread</a> for questions or suggestions.</string>
     <string name="app_description">This mod allows certain generic configurations to be changed on a per-app basis, without needing to edit APKs:
 \n- density / dpi
@@ -29,6 +30,7 @@ Resident in memory; Orientation; Insistent notifications; No big notifications; 
 \n- force orientation (portrait/landscape/auto)
 \n- insistent notifications (loop the sound)
 \n- disable big (expanded) notifications
+\n- force low priority notification (hidden from status bar but visible in notification drawer)
 \n- revoke permissions</string>
     <string name="app_version">Version: %s</string>
     <string name="app_translation">Translator: %s</string>
@@ -60,7 +62,7 @@ is enabled in its configuration!</string>
     <string name="settings_orientation">Orientation</string>
     <string name="settings_insistentnotif">Insistent notifications</string>
     <string name="settings_nobignotif">No big notifications</string>
-    <string name="settings_lowprionotif">Low priority notifications (hide from Status Bar)</string>
+    <string name="settings_lowprionotif">Low prio notifications (hide from Status Bar)</string>
     <string name="settings_permissions">Permissions</string>
 
     <string name="settings_default">(default)</string>
