@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="de.robv.android.xposed.mods.appsettings"
     android:versionCode="21"
-    android:versionName="1.5" xmlns:tools="http://schemas.android.com/tools">
+    android:versionName="1.5-aleq-0.1" xmlns:tools="http://schemas.android.com/tools">
 
     <uses-sdk android:minSdkVersion="15" tools:ignore="UsesMinSdkAttributes"/>
     <permission-tree android:name="de.robv.android.xposed.mods.appsettings"/>

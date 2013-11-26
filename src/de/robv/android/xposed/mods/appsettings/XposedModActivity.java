@@ -81,6 +81,7 @@ public class XposedModActivity extends Activity {
 	private FilterState filterResident;
 	private FilterState filterOrientation;
 	private FilterState filterInsNotif;
+	private FilterState filterLowPrioNotif;
 	private FilterState filterNoBigNotif;
 	private FilterState filterPermissions;
 
@@ -331,6 +332,7 @@ public class XposedModActivity extends Activity {
 				((FilterItemComponent) filterDialog.findViewById(R.id.fltResident)).setFilterState(filterResident);
 				((FilterItemComponent) filterDialog.findViewById(R.id.fltOrientation)).setFilterState(filterOrientation);
 				((FilterItemComponent) filterDialog.findViewById(R.id.fltInsNotif)).setFilterState(filterInsNotif);
+				((FilterItemComponent) filterDialog.findViewById(R.id.fltLowPrioNotif)).setFilterState(filterLowPrioNotif);
 				((FilterItemComponent) filterDialog.findViewById(R.id.fltNoBigNotif)).setFilterState(filterNoBigNotif);
 				((FilterItemComponent) filterDialog.findViewById(R.id.fltPermissions)).setFilterState(filterPermissions);
 
@@ -366,6 +368,7 @@ public class XposedModActivity extends Activity {
 						filterResident = FilterState.ALL;
 						filterOrientation = FilterState.ALL;
 						filterInsNotif = FilterState.ALL;
+						filterLowPrioNotif = FilterState.ALL;
 						filterNoBigNotif = FilterState.ALL;
 						filterPermissions = FilterState.ALL;
 
@@ -389,6 +392,7 @@ public class XposedModActivity extends Activity {
 						filterResident = ((FilterItemComponent) filterDialog.findViewById(R.id.fltResident)).getFilterState();
 						filterOrientation = ((FilterItemComponent) filterDialog.findViewById(R.id.fltOrientation)).getFilterState();
 						filterInsNotif = ((FilterItemComponent) filterDialog.findViewById(R.id.fltInsNotif)).getFilterState();
+						filterLowPrioNotif = ((FilterItemComponent) filterDialog.findViewById(R.id.fltLowPrioNotif)).getFilterState();
 						filterNoBigNotif = ((FilterItemComponent) filterDialog.findViewById(R.id.fltNoBigNotif)).getFilterState();
 						filterPermissions = ((FilterItemComponent) filterDialog.findViewById(R.id.fltPermissions)).getFilterState();
 
@@ -413,6 +417,7 @@ public class XposedModActivity extends Activity {
 				((FilterItemComponent) filterDialog.findViewById(R.id.fltResident)).setEnabled(enable);
 				((FilterItemComponent) filterDialog.findViewById(R.id.fltOrientation)).setEnabled(enable);
 				((FilterItemComponent) filterDialog.findViewById(R.id.fltInsNotif)).setEnabled(enable);
+				((FilterItemComponent) filterDialog.findViewById(R.id.fltLowPrioNotif)).setEnabled(enable);
 				((FilterItemComponent) filterDialog.findViewById(R.id.fltNoBigNotif)).setEnabled(enable);
 				((FilterItemComponent) filterDialog.findViewById(R.id.fltPermissions)).setEnabled(enable);
 			}
@@ -606,6 +611,8 @@ public class XposedModActivity extends Activity {
 			if (filteredOut(prefs.getInt(packageName + Common.PREF_ORIENTATION, 0) > 0, filterOrientation))
 				return true;
 			if (filteredOut(prefs.getBoolean(packageName + Common.PREF_INSISTENT_NOTIF, false), filterInsNotif))
+				return true;
+			if (filteredOut(prefs.getBoolean(packageName + Common.PREF_LOWPRIO_NOTIF, false), filterLowPrioNotif))
 				return true;
 			if (filteredOut(prefs.getBoolean(packageName + Common.PREF_NO_BIG_NOTIFICATIONS, false), filterNoBigNotif))
 				return true;

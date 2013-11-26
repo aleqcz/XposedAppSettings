@@ -180,6 +180,17 @@
                     android:singleLine="true"
                     android:text="@string/settings_nobignotif" />
             </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <CheckBox
+                    android:id="@+id/chkLowPriorityNotifications"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:text="@string/settings_lowprionotif" />
+            </LinearLayout>
             <Button
                 android:id="@+id/btnPermissions"
                 android:layout_width="wrap_content"

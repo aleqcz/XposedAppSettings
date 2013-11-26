@@ -188,6 +188,9 @@ public class XposedMod implements IXposedHookZygoteInit, IXposedHookLoadPackage,
 					if (isActive(packageName, Common.PREF_INSISTENT_NOTIF)) {
 						n.flags |= Notification.FLAG_INSISTENT;
 					}
+                    if (isActive(packageName, Common.PREF_LOWPRIO_NOTIF)) {
+                        n.priority = Notification.PRIORITY_MIN;
+                    }
 					if (isActive(packageName, Common.PREF_NO_BIG_NOTIFICATIONS)) {
 						try {
 							setObjectField(n, "bigContentView", null);

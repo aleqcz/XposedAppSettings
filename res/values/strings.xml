@@ -60,6 +60,7 @@ is enabled in its configuration!</string>
     <string name="settings_orientation">Orientation</string>
     <string name="settings_insistentnotif">Insistent notifications</string>
     <string name="settings_nobignotif">No big notifications</string>
+    <string name="settings_lowprionotif">Low priority notifications (hide from Status Bar)</string>
     <string name="settings_permissions">Permissions</string>
 
     <string name="settings_default">(default)</string>

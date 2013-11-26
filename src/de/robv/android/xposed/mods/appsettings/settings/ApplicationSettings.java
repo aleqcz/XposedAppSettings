@@ -393,7 +393,17 @@ public class ApplicationSettings extends Activity {
             }
         });
 
-		// Setting for permissions revoking
+        // Update Low Priority Notifications field
+        ((CheckBox) findViewById(R.id.chkLowPriorityNotifications)).setChecked(prefs.getBoolean(pkgName + Common.PREF_LOWPRIO_NOTIF, false));
+        // Track changes to the Low Priority Notifications checkbox to know if the settings were changed
+        ((CheckBox) findViewById(R.id.chkLowPriorityNotifications)).setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                dirty = true;
+            }
+        });
+
+        // Setting for permissions revoking
 		allowRevoking = prefs.getBoolean(pkgName + Common.PREF_REVOKEPERMS, false);
 		disabledPermissions = prefs.getStringSet(pkgName + Common.PREF_REVOKELIST, new HashSet<String>());
 
@@ -584,6 +594,11 @@ public class ApplicationSettings extends Activity {
 				} else {
 					prefsEditor.remove(pkgName + Common.PREF_INSISTENT_NOTIF);
 				}
+                if (((CheckBox) findViewById(R.id.chkLowPriorityNotifications)).isChecked()) {
+                    prefsEditor.putBoolean(pkgName + Common.PREF_LOWPRIO_NOTIF, true);
+                } else {
+                    prefsEditor.remove(pkgName + Common.PREF_LOWPRIO_NOTIF);
+                }
 				if (allowRevoking) {
 					prefsEditor.putBoolean(pkgName + Common.PREF_REVOKEPERMS, true);
 				} else {
@@ -612,6 +627,7 @@ public class ApplicationSettings extends Activity {
                 prefsEditor.remove(pkgName + Common.PREF_RESIDENT);
                 prefsEditor.remove(pkgName + Common.PREF_NO_BIG_NOTIFICATIONS);
                 prefsEditor.remove(pkgName + Common.PREF_INSISTENT_NOTIF);
+                prefsEditor.remove(pkgName + Common.PREF_LOWPRIO_NOTIF);
                 prefsEditor.remove(pkgName + Common.PREF_REVOKEPERMS);
                 prefsEditor.remove(pkgName + Common.PREF_REVOKELIST);
             }

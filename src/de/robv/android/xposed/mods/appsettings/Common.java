@@ -26,6 +26,7 @@ public class Common {
 	public static final String PREF_RESIDENT = "/resident";
 	public static final String PREF_NO_BIG_NOTIFICATIONS = "/no-big-notifications";
 	public static final String PREF_INSISTENT_NOTIF = "/insistent-notif";
+	public static final String PREF_LOWPRIO_NOTIF = "low-prio-notif";
 	public static final String PREF_REVOKEPERMS = "/revoke-perms";
 	public static final String PREF_REVOKELIST = "/revoke-list";
 	public static final String PREF_FULLSCREEN = "/fullscreen";
